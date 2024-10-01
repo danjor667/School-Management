@@ -383,8 +383,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 #############################################################
 #############################################################
 # Dev mode EMAIL_BACKEND
-# EMAIL_BACKEND = "school_management.services.email_services.DevEmailBackend" # Only in dev mode
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # Console email backend
+EMAIL_BACKEND = "school_management.services.email_services.DevEmailBackend" # Only in dev mode
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # Console email backend
 
 if not DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -397,7 +397,7 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_USE_LOCALTIME = config("EMAIL_USE_LOCALTIME") # bool val
 DEFAULT_FROM_EMAIL = f"{SITE_NAME} <{EMAIL_HOST_USER}>"
 SERVER_EMAIL = f"Server Error - {SITE_NAME} <{EMAIL_HOST_USER}>"
-DEFAULT_FROM_EMAIL = f"{SITE_NAME} <{EMAIL_HOST_USER}>"
+
 
 
 
