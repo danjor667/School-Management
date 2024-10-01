@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamMetrix Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='{% static "css/login.css" %}' rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/">
+                    <img src="{% static 'images/logo.png' %}" alt="DreamMetrix Logo" class="logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="card">
+            <img src="{% static 'images/logo.png' %}" alt="DreamMetrix Logo" height="60" width="100">
+            <h1>Log In</h1>
+            <form action="." method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="email" placeholder="email" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            <p class="login-link">Don't have an account? <a href="/register/">Sign Up</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

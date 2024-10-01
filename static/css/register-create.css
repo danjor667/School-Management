@@ -1,0 +1,18 @@
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+.signup-container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    width: 350px;
+}
+.form-control {
+    background-color: #333;
+    color: white;
+}
