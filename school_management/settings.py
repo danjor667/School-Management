@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
-# if PRODUCTION_MODE:
-#     #DEBUG = False
+if PRODUCTION_MODE:
+    DEBUG = False
 
 APPEND_SLASH = True
 
