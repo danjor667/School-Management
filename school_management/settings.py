@@ -20,7 +20,7 @@ from django.utils.translation import gettext_lazy as _
 
 # this is the first ever (and only unique) conf to change if you want to switch from dev mode to production
 PRODUCTION_MODE = True # if set to True, all production's configs will be activated by default
-PRODUCTION_MAIN_DOMAIN_NAME = "school-management-wucn.onrender.com" # main domain name to use on production (without protocol or port). Should be updated
+PRODUCTION_MAIN_DOMAIN_NAME = "" # main domain name to use on production (without protocol or port). Should be updated
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
@@ -520,7 +520,7 @@ if PRODUCTION_MODE:
 TENANT_MODEL = "schools.School" # tenant model
 TENANT_DOMAIN_MODEL = "schools.Domain" # tenant domain model
 PUBLIC_SCHEMA_URLCONF = "school_management.urls.public_urls" # separating tenant's URLs from public URLs
-SHOW_PUBLIC_IF_NO_TENANT_FOUND = False
+SHOW_PUBLIC_IF_NO_TENANT_FOUND = True
 TENANT_COLOR_ADMIN_APPS = True # or False
 AUTO_DROP_SCHEMA = True # or False
 
