@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
-if PRODUCTION_MODE:
-    DEBUG = False
+# if PRODUCTION_MODE:
+#     DEBUG = False
 
 APPEND_SLASH = True
 
@@ -384,11 +384,11 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 #############################################################
 #############################################################
 # Dev mode EMAIL_BACKEND
-EMAIL_BACKEND = "school_management.services.email_services.DevEmailBackend" # Only in dev mode
+#EMAIL_BACKEND = "school_management.services.email_services.DevEmailBackend" # Only in dev mode
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # Console email backend
 
-if not DEBUG:
-    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# if not DEBUG:
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_HOST = config("EMAIL_HOST")
 EMAIL_PORT = config("EMAIL_PORT")
