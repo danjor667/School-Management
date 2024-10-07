@@ -27,7 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 if PRODUCTION_MODE:
-    DEBUG = False
+    DEBUG = True
 
 APPEND_SLASH = True
 

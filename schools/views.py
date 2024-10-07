@@ -111,7 +111,7 @@ def create_register(request):  # register principal of the school
         email = data.get("email")
         password = data.get("password")
         code = data.get("code")
-        user = User.objects.create_user(email=email, password=password)  # create either teacher or student base on code
+        user = User.objects.create_user(email=email, password=password)  #create either teacher or student base on code
         user = user.save()
         return redirect("/create-login/")
     return render(request, "principal/admin_register.html", {})
@@ -125,5 +125,5 @@ def create_login(request):  ## log in the principal of a school for him to be ab
         user = authenticate(username=email, password=password)
         if user is not None:
             login(request, user)
-            return redirect("/create-school/")
+            return redirect("/create-school")
     return render(request, "principal/admin_login.html", {})
