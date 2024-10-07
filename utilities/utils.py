@@ -1,5 +1,6 @@
 import logging, re
 from django.conf import settings
+from django.contrib.auth.tokens import default_token_generator
 from django.http import HttpRequest
 from django.shortcuts import redirect
 from django.utils.text import slugify
@@ -127,3 +128,11 @@ def redirect_to_tenant_domain(user):
     protocol = "http"
     tenant_domain = format_tenant_domain_name(user.tenant.schema_name)
     return redirect(f"{protocol}://{tenant_domain}:8000")
+
+
+def generate_activation_link(user):
+    token = default_token_generator.make_token(user)
+    # base_url = reverse("schools:activate-user")
+    base_url = "activate-user"
+    full_url = f"http://localhost:8000/{base_url}/?token={token}&user_id={user.id}"
+    return full_url

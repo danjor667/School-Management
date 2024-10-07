@@ -27,7 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 if PRODUCTION_MODE:
-    DEBUG = True
+    DEBUG = False
 
 APPEND_SLASH = True
 
@@ -42,6 +42,7 @@ WSGI_APPLICATION = "school_management.wsgi.application"
 
 ADMINS = [
     ("Kiuv ABRAJ", "kiuv.abraj@gmail.com"),
+    ("Jordan Nguepi", "jordannguepi@gmail.com")
     # put your own infos here
 ]
 
