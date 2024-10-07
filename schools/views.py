@@ -113,7 +113,7 @@ def create_register(request):  # register principal of the school
         code = data.get("code")
         user = User.objects.create_user(email=email, password=password)  # create either teacher or student base on code
         user = user.save()
-        return redirect("/login/")
+        return redirect("/create-login/")
     return render(request, "principal/admin_register.html", {})
 
 
