@@ -19,15 +19,15 @@ from django.utils.translation import gettext_lazy as _
 #############################################################
 
 # this is the first ever (and only unique) conf to change if you want to switch from dev mode to production
-PRODUCTION_MODE = True # if set to True, all production's configs will be activated by default
+PRODUCTION_MODE = False # if set to True, all production's configs will be activated by default
 PRODUCTION_MAIN_DOMAIN_NAME = "" # main domain name to use on production (without protocol or port). Should be updated
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
-# if PRODUCTION_MODE:
-#     DEBUG = False
+if PRODUCTION_MODE:
+    DEBUG = False
 
 APPEND_SLASH = True
 
@@ -384,7 +384,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 #############################################################
 #############################################################
 # Dev mode EMAIL_BACKEND
-#EMAIL_BACKEND = "school_management.services.email_services.DevEmailBackend" # Only in dev mode
+#EMAIL_BACKEND = "school_management.services.email_services.DevEmailBackend"  # Only in dev mode
+
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # Console email backend
 
 # if not DEBUG:

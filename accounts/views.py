@@ -1,7 +1,7 @@
+from django.contrib import messages
 from django.contrib.auth.tokens import default_token_generator
 from django.shortcuts import render, redirect
 
-import messages
 from accounts.models import User
 
 

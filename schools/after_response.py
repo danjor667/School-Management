@@ -188,6 +188,13 @@ def create_school_schema_and_domain_task(request: HttpRequest|None, data: dict, 
         data=data,
         submited_by=submited_by
     )
+
+    student_code = f"{school.badge}-STUDENT"
+    teacher_code = f"{school.badge}-TEACHER"
+    email_content = f"Here is the student code: {student_code} and teacher code: {teacher_code} for {school.name}"
+    email = SendRawEmailService(request, mail_subject="SignUp Codes", email_content=email_content, context={},
+                                receivers=[submited_by.email])
+    email.send_email_by_default()
     
     # domain name (subdomain)
     domain = _proceed_school_domain_name(request=request, school=school)

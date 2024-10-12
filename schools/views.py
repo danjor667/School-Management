@@ -27,9 +27,12 @@ def register(request):  # register student or teacher in the relevant tenant sch
         email = data.get("email")
         password = data.get("password")
         code = data.get("code")
-        school = School.objects.get(badge=code.split("-")[0])
+        try:
+            school = School.objects.get(badge=code.split("-")[0])
+        except School.DoesNotExist:
+            school = None
 
-        if school:
+        if school is not None:
             with schema_context(school.schema_name):
                 user = TenantUser.objects.create_tenant_user(email=email, password=password)
                 user.save()

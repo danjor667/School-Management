@@ -1,6 +1,9 @@
+from django.db import models
 from teachers.managers import TeacherManager
 
 from hitcount.models import HitCountMixin
+
+from tenant_users.models import TenantUser
 from utilities.mixins import PersonModelMixin
 from django.utils.translation import gettext_lazy as _
 
@@ -10,6 +13,7 @@ class Teacher(PersonModelMixin, HitCountMixin):
     """
     Teacher model (base fields are defined in the mixin)
     """
+    user = models.OneToOneField(TenantUser, on_delete=models.CASCADE)
 
     # define other fields here
 

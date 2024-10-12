@@ -29,7 +29,7 @@ class TenantUser(AbstractUser):
     email = models.EmailField(_('email address'), unique=True)
     username = models.CharField(_('username'), max_length=150, unique=True, blank=True, null=True)
 
-    EMAIL_FIELD = None  # No need
+    EMAIL_FIELD = "email"  # No need
     USERNAME_FIELD = "email"  # Can be an email, an username, a registration number, a phone number, ...
     REQUIRED_FIELDS = []
 

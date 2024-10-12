@@ -1,5 +1,8 @@
+import accounts.views
 from schools import views
 from django.urls import path
+
+from utilities.utils import generate_activation_link
 
 app_name = "schools"
 
@@ -12,5 +15,6 @@ urlpatterns = [
     path('create-login/', views.create_login, name="create_login"),
     path('create-register/', views.create_register, name="create_register"),
     path("create-school/", views.create_school_view, name="create-school"),
+    path("activate-user/", accounts.views.activate_user, name="activate_user"),
 
 ]
