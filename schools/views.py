@@ -72,6 +72,8 @@ def create_school_view(request):
     form = CreateSchoolForm()
 
     if request.method == "POST":
+        print(request.user.is_authenticated)
+        print(request.user)
         form = CreateSchoolForm(data=request.POST, files=request.FILES) or None
         if form.is_valid():
             cleaned_data = form.cleaned_data
