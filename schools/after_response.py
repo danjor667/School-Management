@@ -28,7 +28,7 @@ def _generate_unique_str(length=6):
 
 
 
-def _proceed_school_creation(request: HttpRequest|None, data: dict, submited_by: User|None) -> School:
+def _proceed_school_creation(request: HttpRequest|None, data: dict, submited_by) -> School:
     """
     A utility (background) to save school data
     
@@ -121,7 +121,7 @@ def _proceed_school_domain_name(request: HttpRequest, school: School) -> Domain:
 
 
 
-def _creation_processes_completed(request: HttpRequest, submited_by: User, school: School, domain: Domain) -> None:
+def _creation_processes_completed(request: HttpRequest, submited_by, school: School, domain: Domain) -> None:
     """
     After other stuffs have been completed, notify the admin who submited the request.
     
