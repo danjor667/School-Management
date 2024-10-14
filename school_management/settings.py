@@ -452,9 +452,9 @@ SESSION_SAVE_EVERY_REQUEST = False
 SESSION_COOKIE_DOMAIN = ".localhost"
 
 if PRODUCTION_MODE: # applying prod sessions confs
-    SESSION_COOKIE_SECURE = True # Use current conf only in production
+    #SESSION_COOKIE_SECURE = True # Use current conf only in production
     SESSION_COOKIE_HTTPONLY = True # Use current conf only in production
-    SESSION_COOKIE_DOMAIN = f".{PRODUCTION_MAIN_DOMAIN_NAME}"
+    #SESSION_COOKIE_DOMAIN = f".{PRODUCTION_MAIN_DOMAIN_NAME}"
 
 
 
