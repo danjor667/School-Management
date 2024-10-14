@@ -135,7 +135,7 @@ def generate_activation_link(user):
     # base_url = reverse("schools:activate-user")
     base_url = "activate-user"
     if settings.PRODUCTION_MODE:
-        full_url = f"https://school-management-wucn.onrender.com/{base_url}?token={token}$user_id={user.id}"
+        full_url = f"https://school-management-uoil.onrender.com/{base_url}?token={token}$user_id={user.id}"
     else:
         full_url = f"http://localhost:8000/{base_url}/?token={token}&user_id={user.id}"
     return full_url
