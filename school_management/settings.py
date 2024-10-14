@@ -20,7 +20,7 @@ from django.utils.translation import gettext_lazy as _
 #############################################################
 
 # this is the first ever (and only unique) conf to change if you want to switch from dev mode to production
-PRODUCTION_MODE = True # if set to True, all production's configs will be activated by default
+PRODUCTION_MODE = False # if set to True, all production's configs will be activated by default
 PRODUCTION_MAIN_DOMAIN_NAME = "" # main domain name to use on production (without protocol or port). Should be updated
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -451,10 +451,10 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_SAVE_EVERY_REQUEST = False
 SESSION_COOKIE_DOMAIN = ".localhost"
 
-if PRODUCTION_MODE: # applying prod sessions confs
-    #SESSION_COOKIE_SECURE = True # Use current conf only in production
-    SESSION_COOKIE_HTTPONLY = True # Use current conf only in production
-    #SESSION_COOKIE_DOMAIN = f".{PRODUCTION_MAIN_DOMAIN_NAME}"
+# if PRODUCTION_MODE: # applying prod sessions confs
+#     #SESSION_COOKIE_SECURE = True # Use current conf only in production
+#     SESSION_COOKIE_HTTPONLY = True # Use current conf only in production
+#     #SESSION_COOKIE_DOMAIN = f".{PRODUCTION_MAIN_DOMAIN_NAME}"
 
 
 
@@ -472,14 +472,14 @@ if PRODUCTION_MODE: # applying prod sessions confs
 #############################################################
 #############################################################
 #############################################################
-if PRODUCTION_MODE: # applying prod HTTPS/SSL confs
-    SECURE_HSTS_SECONDS = 60 # Use current conf only in production
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True # Use current conf only in production
-    SECURE_HSTS_PRELOAD = True # Use current conf only in production
-    SECURE_SSL_REDIRECT = True # Use current conf only in production
-    SESSION_COOKIE_SECURE = True # Use current conf only in production
-    CSRF_COOKIE_SECURE = True # Use current conf only in production
-    SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups" # Use current conf only in production
+# if PRODUCTION_MODE: # applying prod HTTPS/SSL confs
+#     SECURE_HSTS_SECONDS = 60 # Use current conf only in production
+#     SECURE_HSTS_INCLUDE_SUBDOMAINS = True # Use current conf only in production
+#     SECURE_HSTS_PRELOAD = True # Use current conf only in production
+#     SECURE_SSL_REDIRECT = True # Use current conf only in production
+#     SESSION_COOKIE_SECURE = True # Use current conf only in production
+#     CSRF_COOKIE_SECURE = True # Use current conf only in production
+#     SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups" # Use current conf only in production
 
 
 
