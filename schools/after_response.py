@@ -170,7 +170,7 @@ def _creation_processes_completed(request: HttpRequest, submited_by: User, schoo
 
 
 @after_response.enable
-def create_school_schema_and_domain_task(request: HttpRequest|None, data: dict, submited_by: User|None):
+def create_school_schema_and_domain_task(request: HttpRequest|None, data: dict, submited_by):
     """
     Task to create a school (with its base details and domain).
     
