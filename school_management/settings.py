@@ -20,7 +20,7 @@ from django.utils.translation import gettext_lazy as _
 #############################################################
 
 # this is the first ever (and only unique) conf to change if you want to switch from dev mode to production
-PRODUCTION_MODE = True # if set to True, all production's configs will be activated by default
+PRODUCTION_MODE = False # if set to True, all production's configs will be activated by default
 PRODUCTION_MAIN_DOMAIN_NAME = "" # main domain name to use on production (without protocol or port). Should be updated
 
 BASE_DIR = Path(__file__).resolve().parent.parent
