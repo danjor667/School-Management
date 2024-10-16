@@ -67,7 +67,7 @@ def _login(request):  # login student or teacher
     return render(request, "user/login.html", {})
 
 
-@login_required  # update login url later on
+@login_required(login_url="/create-login/")
 def create_school_view(request):
     form = CreateSchoolForm()
 
