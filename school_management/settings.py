@@ -25,6 +25,7 @@ PRODUCTION_MAIN_DOMAIN_NAME = "" # main domain name to use on production (withou
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
+
 DEBUG = False
 
 # if PRODUCTION_MODE:
